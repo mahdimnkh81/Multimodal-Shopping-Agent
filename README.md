@@ -95,8 +95,8 @@ pip install langchain langchain-openai langchain-groq streamlit python-dotenv op
 ### Step 4: Environment Configuration
 Create a `.env` file in the root folder and add your API credentials:
 env
-OPENAI_API_KEY=your_gapgpt_api_key_here
-OPENAI_BASE_URL=https://api.gapgpt.app/v1
+OPENAI_API_KEY=your_api_key_here
+OPENAI_BASE_URL=your_base_url_here
 
 ---
 
