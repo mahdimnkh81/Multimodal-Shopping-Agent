@@ -3,24 +3,24 @@
 An **AI-powered shopping assistant** built with **LangChain**, **tool calling**, and **multimodal reasoning**.  
 The agent helps users discover products through **natural language** or **product images**, filters results by structured constraints such as **price**, **organic status**, and **minimum rating**, and completes the flow with a safe, confirmation-based **checkout** step.
 
-> 💡 **Example Usage:**  
+> **Example Usage:**  
 > *“I want organic honey under $20 with a 4.5+ rating”*  
 > Or simply upload a product image and let the agent find similar items!
 
 ---
 
-## ✨ Features
+## Features
 
-* 🗣️ **Natural-Language Shopping:** Understands free-form requests and extracts preferences (product type, max price, organic flag, minimum rating).
-* 📸 **Image-Based Product Search:** Accepts a product photo, using a vision-capable LLM to identify attributes and convert them into a searchable query.
-* 🔍 **Tool-Augmented Retrieval:** Searches a SQLite product catalog with structured filters and retrieves ratings/review counts before ranking.
-* ⭐ **Rating-Aware Recommendations:** Evaluates candidate products with real review statistics based on user-defined thresholds.
-* 🛡️ **Safe Checkout Flow:** Resolves products using IDs and **never** places an order without explicit user confirmation.
-* 🖥️ **Interactive UI:** Includes a beautiful **Streamlit** interface for conversational shopping and image uploads.
+* **Natural-Language Shopping:** Understands free-form requests and extracts preferences (product type, max price, organic flag, minimum rating).
+* **Image-Based Product Search:** Accepts a product photo, using a vision-capable LLM to identify attributes and convert them into a searchable query.
+* **Tool-Augmented Retrieval:** Searches a SQLite product catalog with structured filters and retrieves ratings/review counts before ranking.
+* **Rating-Aware Recommendations:** Evaluates candidate products with real review statistics based on user-defined thresholds.
+* **Safe Checkout Flow:** Resolves products using IDs and **never** places an order without explicit user confirmation.
+* **Interactive UI:** Includes a beautiful **Streamlit** interface for conversational shopping and image uploads.
 
 ---
 
-## 🧠 How It Works
+## How It Works
 
 The system is implemented as a **LangChain agent** with custom tools. Depending on the user’s input modality, the workflow branches into two paths:
 
@@ -40,7 +40,7 @@ The system is implemented as a **LangChain agent** with custom tools. Depending 
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 ```mermaid
 flowchart TD
 UserText([💬 User Text]) --> Agent
@@ -61,7 +61,7 @@ Vision -->|GPT-4o-mini| DPI[describe_product_image]
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 * **Agentic Framework:** LangChain (Agent Executor, Tool Decorators)
 * **LLM (Reasoning):** `gapgpt-qwen-3.6` (via GapGPT API)
@@ -71,7 +71,7 @@ Vision -->|GPT-4o-mini| DPI[describe_product_image]
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Step 1: Clone the Repository
 bash
@@ -101,7 +101,7 @@ OPENAI_BASE_URL=https://api.gapgpt.app/v1
 
 ---
 
-## 🏃‍♂️ Running the Project
+## Running the Project
 
 **Option A: Launch the Web Interface (Recommended)**
 bash
@@ -113,18 +113,18 @@ python shopping_agent.py
 
 ---
 
-## 🔧 Tool Specifications
+## Tool Specifications
 
 | Tool Name | Description | Data Source |
 | :--- | :--- | :--- |
-| 🔍 **`search_products`** | Uses SQL to find items based on name, category, price, and organic status. | SQLite (Catalog) |
-| ⭐ **`get_rating`** | Retrieves average stars and review counts for specific Product IDs. | SQLite (Reviews) |
-| 📸 **`describe_product_image`** | Uses Vision AI to turn a photo into searchable text/attributes. | Vision LLM |
-| 🛒 **`checkout`** | Inserts a new record into the database to finalize the purchase. | SQLite (Orders) |
+| **`search_products`** | Uses SQL to find items based on name, category, price, and organic status. | SQLite (Catalog) |
+| **`get_rating`** | Retrieves average stars and review counts for specific Product IDs. | SQLite (Reviews) |
+| **`describe_product_image`** | Uses Vision AI to turn a photo into searchable text/attributes. | Vision LLM |
+| **`checkout`** | Inserts a new record into the database to finalize the purchase. | SQLite (Orders) |
 
 ---
 
-## 💬 Example Interaction Flows
+## Example Interaction Flows
 
 ### Scenario 1: Text Search
 > **User:** "I want to buy organic honey with 4.5+ rating and less than $20."
@@ -146,10 +146,10 @@ python shopping_agent.py
 
 ---
 
-## 🛡️ Safety & Constraints
+## Safety & Constraints
 
 To ensure reliability, the agent is strictly constrained by the following rules:
 
-* 🛑 **No Ghost Orders:** The agent **cannot** execute the `checkout` tool without direct, explicit confirmation from the user.
-* 🎯 **No Hallucinations:** The agent is instructed to only use `product_id`s explicitly retrieved from the database tools.
-* 💾 **Data Integrity:** All transactions and searches are securely logged and executed against the local SQLite database.
+* **No Ghost Orders:** The agent **cannot** execute the `checkout` tool without direct, explicit confirmation from the user.
+* **No Hallucinations:** The agent is instructed to only use `product_id`s explicitly retrieved from the database tools.
+* **Data Integrity:** All transactions and searches are securely logged and executed against the local SQLite database.
