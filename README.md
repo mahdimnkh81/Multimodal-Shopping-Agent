@@ -73,13 +73,11 @@ Vision -->|GPT-4o-mini| DPI[describe_product_image]
 ## Getting Started
 
 ### Step 1: Clone the Repository
-bash
 git clone https://github.com/mahdimnkh81/Multimodal-Shopping-Agent.git
 cd multimodal-shopping-agent
 
 ### Step 2: Environment Setup
 Create and activate a Python virtual environment:
-bash
 python -m venv .venv
 
 # On Windows:
