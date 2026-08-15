@@ -41,25 +41,7 @@ The system is implemented as a **LangChain agent** with custom tools. Depending 
 ---
 
 ## Architecture
-```mermaid
-flowchart TD
-UserText([💬 User Text]) --> Agent
-UserImage([📸 User Image]) --> Agent
 
-subgraph Core[LangChain Shopping Agent]
-Agent{Agent Executor}
-Tools[Tool Calling Logic]
-Vision[Vision LLM]
-Agent <--> Tools
-Agent <--> Vision
-end
-
-Tools -->|SQLite Query| SP[(search_products)]
-Tools -->|Reviews Lookup| GR[(get_rating)]
-Tools -->|Writes Order| CO[(checkout)]
-Vision -->|GPT-4o-mini| DPI[describe_product_image]
-
----
 
 ## Tech Stack
 
