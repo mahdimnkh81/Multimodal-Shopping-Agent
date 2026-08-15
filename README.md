@@ -58,6 +58,7 @@ Tools -->|SQLite Query| SP[(search_products)]
 Tools -->|Reviews Lookup| GR[(get_rating)]
 Tools -->|Writes Order| CO[(checkout)]
 Vision -->|GPT-4o-mini| DPI[describe_product_image]
+```
 
 ## Tech Stack
 
