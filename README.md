@@ -74,7 +74,7 @@ Vision -->|GPT-4o-mini| DPI[describe_product_image]
 
 ### Step 1: Clone the Repository
 bash
-git clone https://github.com/your-username/multimodal-shopping-agent.git
+git clone https://github.com/mahdimnkh81/Multimodal-Shopping-Agent.git
 cd multimodal-shopping-agent
 
 ### Step 2: Environment Setup
