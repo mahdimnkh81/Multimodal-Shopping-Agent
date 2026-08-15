@@ -8,3 +8,15 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Environments & Secrets
+.env
+
+# Databases
+store.db
+identifier.sqlite
+*.db
+*.sqlite
+
+# IDE settings
+.idea/
